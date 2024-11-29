@@ -238,7 +238,7 @@ body {
   }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 500px) {
   .form__header {
     margin-bottom: 35px;
   }
