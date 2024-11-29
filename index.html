@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>proyect</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <main class="container">
+      <div class="form">
+        <header class="form__header">
+          <h2 class="form__title">mortgage calculator</h2>
+          <button class="form__button">Clear all</button>
+        </header>
+
+        <form class="form__data">
+          <label for="" class="form__label">
+            <span class="form__legend">mortgage amount</span>
+            <div class="form__field">
+              <span class="form__icon">£</span>
+              <input type="number" class="form__input" />
+            </div>
+          </label>
+
+          <div class="form__value">
+            <label for="" class="form__label">
+              <span class="form__legend">mortgage term</span>
+              <div class="form__field">
+                <input type="number" class="form__input" />
+                <span class="form__icon form__icon--size">years</span>
+              </div>
+            </label>
+            <label for="" class="form__label">
+              <span class="form__legend">mortgage rate</span>
+              <div class="form__field">
+                <input type="number" class="form__input" />
+                <span class="form__icon form__icon--radius">%</span>
+              </div>
+            </label>
+          </div>
+
+          <div class="form__check">
+            <span class="form__legend">mortgage type</span>
+            <label for="optOne" class="form__label form__label--bg">
+              <div class="form__field form__field--radius">
+                <input
+                  class="form__radio"
+                  type="radio"
+                  name="preference"
+                  value="1"
+                  id="optOne"
+                />
+                <span>repayment</span>
+              </div>
+            </label>
+            <label for="optTwo" class="form__label form__label--bg">
+              <div class="form__field form__field--radius">
+                <input
+                  class="form__radio"
+                  type="radio"
+                  name="preference"
+                  value="2"
+                  id="optTwo"
+                />
+                <span>interest only</span>
+              </div>
+            </label>
+          </div>
+          <button class="form__cta">
+            <img src="images/icon-calculator.svg" />
+            <span>calculate repayments</span>
+          </button>
+        </form>
+      </div>
+      <div class="results">
+        <picture class="results__picture">
+          <img
+            src="./images/illustration-empty.svg"
+            alt=""
+            class="results__img"
+          />
+        </picture>
+        <h2 class="results__title">Results shown here</h2>
+        <p class="results__description">
+          Complete the form and click "calculate repayments" to see what your
+          monthly repayments would be.
+        </p>
+      </div>
+    </main>
+  </body>
+</html>

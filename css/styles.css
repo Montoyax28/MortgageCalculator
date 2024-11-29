@@ -1,0 +1,255 @@
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url(../fonts/static/PlusJakartaSans-Medium.ttf) format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url(../fonts/static/PlusJakartaSans-Bold.ttf) format("truetype");
+  font-weight: 700;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+:root {
+  --lime: hsl(61, 70%, 52%);
+  --white: hsl(0, 0%, 100%);
+  --bg: hsl(202, 86%, 94%);
+  --legend-color: hsl(203, 41%, 72%);
+  --letter-color: hsl(200, 26%, 54%);
+  --text-color: hsl(200, 24%, 40%);
+  --bg-box: hsl(202, 55%, 16%);
+  --border-radius: 20px;
+  --border-radius-input: 5px;
+}
+
+p {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 65%;
+  height: 530px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 16px #00000026;
+}
+
+.form,
+.results {
+  width: 50%;
+  height: 100%;
+  padding: 30px;
+}
+
+.form__header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.form__title {
+  text-transform: capitalize;
+}
+
+.form__button {
+  text-transform: capitalize;
+  background-color: transparent;
+  border: none;
+  color: var(--letter-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.form__button:hover {
+  color: var(--bg-box);
+}
+
+.form__label {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form__legend {
+  display: inline-block;
+  text-transform: capitalize;
+  color: var(--letter-color);
+  margin-bottom: 12px;
+}
+
+.form__field {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: var(--border-radius-input);
+  border: 1px solid var(--letter-color);
+  overflow: hidden;
+}
+
+.form__field:hover {
+  border-color: var(--bg-box);
+}
+
+.form__icon {
+  display: inline-block;
+  width: 50px;
+  height: 100%;
+  padding-top: 6px;
+  text-align: center;
+  background-color: var(--bg);
+  color: var(--text-color);
+}
+
+.form__icon--size {
+  width: 100px;
+}
+
+.form__input {
+  width: 100%;
+  height: 100%;
+  padding-left: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.form__check {
+  margin-bottom: 15px;
+}
+
+.form__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.form__field:has(.form__input:focus) {
+  border-color: var(--lime);
+}
+
+.form__value {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 35px;
+}
+
+.form__field--radius {
+  gap: 16px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.form__field--radius > span {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.form__field--radius:has(.form__radio:checked) {
+  accent-color: var(--lime);
+  border-color: var(--lime);
+  background-color: hsla(61, 70%, 52%, 0.185);
+}
+
+.form__field.form__field--radius:hover {
+  border-color: var(--lime);
+}
+
+.form__cta {
+  width: 220px;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  background-color: var(--lime);
+  font-weight: 700;
+  color: var(--bg-box);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.form__cta span {
+  text-transform: capitalize;
+}
+
+.form__cta:hover {
+  background-color: hsla(61, 70%, 52%, 0.625);
+  cursor: pointer;
+}
+
+.results {
+  background-color: var(--bg-box);
+  border-radius: 0 var(--border-radius) var(--border-radius) 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.results__title {
+  color: var(--white);
+}
+
+.results__description {
+  text-align: center;
+  color: var(--legend-color);
+}
+
+@media screen and (max-width: 820px) {
+  body {
+    width: 100%;
+  }
+  .container {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: initial;
+  }
+
+  .form,
+  .results {
+    width: 100%;
+    border-radius: initial;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .form__header {
+    margin-bottom: 35px;
+  }
+
+  .form__header,
+  .form__value {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .form__cta {
+    width: 100%;
+  }
+}
